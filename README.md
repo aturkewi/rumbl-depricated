@@ -1,6 +1,8 @@
 # Rumbl
 
-To start your Phoenix app:
+This is a code along with the book Programming Phoenix
+
+## Installing and starting the app:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
