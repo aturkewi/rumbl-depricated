@@ -1,13 +1,13 @@
 defmodule Rumbl.UserController do
   use Rumbl.Web, :controller
-  plug :authenticate when action in [:index, :show]
   alias Rumbl.User
-  
+  plug :authenticate when action in [:index, :show]
   
   def index(conn, _params) do
     users = Repo.all(Rumbl.User)
     render conn, "index.html", users: users
   end
+  
   
   def show(conn, %{"id" => id}) do
     user = Repo.get(Rumbl.User, id)
