@@ -17,6 +17,11 @@ defmodule Rumbl.Auth do
     |> assign(:current_user, user)
     |> put_session(:user_id, user.id)
     |> configure_session(renew: true)
+    # thing1 = assign(conn, :current_user, user)
+    # require IEx
+    # IEx.pry()
+    # thing2 = put_session(thing1, :user_id, user.id)
+    # configure_session(thing2, renew: true)
   end
   
   def login_by_username_and_pass(conn, username, given_pass, opts) do
