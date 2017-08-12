@@ -1,5 +1,6 @@
 defmodule Rumbl.VideoController do
   use Rumbl.Web, :controller
+  plug :scrub_params, "video" when action in [:create, :update]
 
   alias Rumbl.Video
 
