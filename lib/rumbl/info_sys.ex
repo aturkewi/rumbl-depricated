@@ -17,9 +17,9 @@ defmodule Rumbl.InfoSys do
     |> Enum.map(&spawn_query(&1, query, limit))
   end
 
-  defp spawn_query(backedn, query, limit) do
+  defp spawn_query(backend, query, limit) do
     query_ref = make_ref()
-    opts = [backedn, query, query_ref, self(), limit]
+    opts = [backend, query, query_ref, self(), limit]
     {:ok, pid} = Supervisor.start_child(Rumble.InfoSys.Supervisor, opts)
     {pid, query_ref}
   end

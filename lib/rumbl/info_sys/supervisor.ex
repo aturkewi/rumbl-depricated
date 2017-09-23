@@ -6,11 +6,6 @@ defmodule Rumbl.InfoSys.Supervisor do
     Supervisor.start_link(__MODULE__, [], name: __MODULE__)
   end
 
-  def puts_name do
-    IO.puts __MODULE__
-    #=> Elixir.Rumbl.InfoSys.Supervisor
-  end
-
   def init(_opts) do
     IO.puts "Supervisor inited"
     children = [
